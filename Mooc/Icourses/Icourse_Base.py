@@ -1,6 +1,6 @@
 '''
-    定义一个爱课程 Icourse 的虚基类
-    用于派生 Icourse_Cuoc 和 Icourse_Mooc
+   Define a virtual base class of a love course icourse
+    Used to derive icourse_cuoc and iCourse_mooc
 '''
 
 import os

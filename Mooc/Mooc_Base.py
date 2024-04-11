@@ -1,5 +1,5 @@
 '''
-    Mooc 的虚基类：用于派生所有Mooc子类
+    Mooc Displication: used to derive all MOOC subclasses
 '''
 
 import os
@@ -22,7 +22,7 @@ class Mooc_Base(ABC):
 
     @property
     def mode(self):
-        '''下载模式: 用于选择性下载'''
+        '''Download mode: Used for selective download'''
         return self.__mode
 
     @mode.setter
@@ -31,7 +31,7 @@ class Mooc_Base(ABC):
 
     @property
     def cid(self):
-        '''课程的 ID'''
+        '''Curriculum ID'''
         return self.__cid
     
     @cid.setter
@@ -40,7 +40,7 @@ class Mooc_Base(ABC):
 
     @property
     def title(self):
-        '''课程的标题'''
+        '''Title of Course'''
         return self.__title
     
     @title.setter
@@ -49,7 +49,7 @@ class Mooc_Base(ABC):
 
     @property
     def infos(self):
-        '''解析后的课程信息'''
+        '''Analysis of course information'''
         return self.__infos
 
     @property
@@ -94,39 +94,39 @@ class Mooc_Base(ABC):
 
     @classmethod
     def download_video(cls, video_url, video_name, video_dir):
-        '''下载 MP4 视频文件'''
+        '''Download mp4 video file'''
         succeed = True
         if not cls.judge_file_existed(video_dir, video_name, '.mp4'):
             try:
                 header =  request_head(video_url)
                 size = float(header['Content-Length']) / (1024*1024)
-                print("  |-{}  [mp4] 大小: {:.2f}M".format(cls.align(video_name,LENGTH), size))
+                print("  |-{}  [mp4] size: {:.2f}M".format(cls.align(video_name,LENGTH), size))
                 aria2_download_file(video_url, video_name+'.mp4', video_dir)
             except DownloadFailed:
-                print("  |-{}  [mp4] 资源无法下载！".format(cls.align(video_name,LENGTH)))
+                print("  |-{}  [mp4] Resources cannot be downloaded！".format(cls.align(video_name,LENGTH)))
                 succeed = False
         else:
-            print("  |-{}  [mp4] 已经成功下载！".format(cls.align(video_name,LENGTH)))
+            print("  |-{}  [mp4] Has successfully downloaded！".format(cls.align(video_name,LENGTH)))
         return succeed
 
     @classmethod
     def download_pdf(cls, pdf_url, pdf_name, pdf_dir):
-        '''下载 PDF '''
+        '''download PDF '''
         succeed = True
         if not cls.judge_file_existed(pdf_dir, pdf_name, '.pdf'):
             try:
                 aria2_download_file(pdf_url, pdf_name+'.pdf', pdf_dir)
-                print("  |-{}  (pdf) 已经成功下载！".format(cls.align(pdf_name,LENGTH)))
+                print("  |-{}  (pdf) Has successfully downloaded！".format(cls.align(pdf_name,LENGTH)))
             except DownloadFailed:
-                print("  |-{}  (pdf) 资源无法下载！".format(cls.align(pdf_name,LENGTH)))
+                print("  |-{}  (pdf) Resources cannot be downloaded！".format(cls.align(pdf_name,LENGTH)))
                 succeed = False
         else:
-            print("  |-{}  (pdf) 已经成功下载！".format(cls.align(pdf_name,LENGTH)))
+            print("  |-{}  (pdf) Has successfully downloaded！".format(cls.align(pdf_name,LENGTH)))
         return succeed
 
     @classmethod
     def download_sub(cls, sub_url, sub_name, sub_dir):
-        '''下载字幕'''
+        '''Download subtitles'''
         succeed = True
         if not cls.judge_file_existed(sub_dir, sub_name, '.srt'):
             try:
@@ -139,7 +139,7 @@ class Mooc_Base(ABC):
     def judge_file_existed(dirname, filename, fmt):
         '''
         judge_file_existed(dirname, filename, fmt) 
-        判断在 dirname 目录下是否存在已下载成功的格式为 fmt 且文件名为 filename 的文件
+        Determine whether there is a file that has been successfully downloaded in the DIRNAME directory to FMT and file name is FILENAME
         '''
         filepath = os.path.join(dirname, filename)
         exist1 = os.path.exists(filepath+fmt)
@@ -147,9 +147,9 @@ class Mooc_Base(ABC):
         return exist1 and not exist2
 
     @staticmethod
-    def align(string, width):  #  对齐汉字字符窜，同时截断多余输出
+    def align(string, width):  #  Align the Chinese character string, cut off excess output at the same time
         '''
-        align(string, width) 根据width宽度居中对齐字符窜 string，主要用于汉字居中
+        align(string, width) According to the width width in the middle of the alignment character, it is mainly used for the middle of Chinese characters
         '''
         res = ""
         size = 0

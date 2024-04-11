@@ -1,6 +1,5 @@
 '''
-    Mooc 下载功能模块：调用 aria2c.exe 下载文件
-'''
+MOOC download function module: call aria2c.exe download file'''
 
 import os
 import re
@@ -38,7 +37,7 @@ def aria2_download_file(url, filename, dirname='.'):
                         if unit == 'K':
                             speed /= 1024
                         per = min(int(LENGTH*percent/100) , LENGTH)
-                        print('\r  |-['+per*'*'+(LENGTH-per)*'.'+'] {:.0f}% {:.2f}M/s'.format(percent,speed),end=' (ctrl+c中断)')
+                        print('\r  |-['+per*'*'+(LENGTH-per)*'.'+'] {:.0f}% {:.2f}M/s'.format(percent,speed),end=' (ctrl+cInterrupt)')
             if p.returncode != 0:
                 cnt += 1
                 if cnt==1:
@@ -52,11 +51,11 @@ def aria2_download_file(url, filename, dirname='.'):
                         ave_speed = float(ave_speed)
                         if unit == 'K':
                             ave_speed /= 1024
-                    print('\r  |-['+LENGTH*'*'+'] {:.0f}% {:.2f}M/s'.format(100,ave_speed),end='  (完成)    \n')
+                    print('\r  |-['+LENGTH*'*'+'] {:.0f}% {:.2f}M/s'.format(100,ave_speed),end='  (Finish)    \n')
                 return
         finally:
             if p:
-                p.kill()   # 保证子进程已终止
+                p.kill()   # Guarantee the child process is terminated
     clear_files(dirname, filename)
     raise DownloadFailed("download failed")
 

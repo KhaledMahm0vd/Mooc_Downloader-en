@@ -1,5 +1,5 @@
 '''
-    Mooc 的请求模块：包含 get, post, head 常用的三大请求
+Mooc's request module: includes three commonly used requests: get, post, and head
 '''
 
 from time import sleep
@@ -13,7 +13,7 @@ __all__ = [
     'RequestFailed', 'request_get', 'request_post', 'request_head', 'request_check'
 ]
 
-headers = ("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36")  #这里模拟浏览器  
+headers = ("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36")  #Simulate browser here
 opener = request.build_opener()  
 opener.addheaders = [headers]
 request.install_opener(opener)
@@ -43,7 +43,7 @@ def request_decorate(count=3):
 
 @request_decorate()
 def request_get(url, decoding='utf8'):
-    '''get请求'''
+    '''get'''
     req = request.Request(url=url)
     response = request.urlopen(req, timeout=TIMEOUT)
     text = response.read().decode(decoding)
@@ -52,7 +52,7 @@ def request_get(url, decoding='utf8'):
 
 @request_decorate()
 def request_post(url, data, decoding='utf8'):
-    '''post请求'''
+    '''post'''
     data = parse.urlencode(data).encode('utf8')
     req = request.Request(url=url, data=data, method='POST')
     response = request.urlopen(req, timeout=TIMEOUT)
@@ -62,7 +62,7 @@ def request_post(url, data, decoding='utf8'):
 
 @request_decorate()
 def request_head(url):
-    '''head请求'''
+    '''head'''
     req = request.Request(url=url);
     response = request.urlopen(req, timeout=TIMEOUT)
     header =  dict(response.getheaders())
@@ -71,7 +71,7 @@ def request_head(url):
 
 @request_decorate(1)
 def request_check(url):
-    '''检查url是否可以访问'''
+    '''Check if the url is accessible'''
     req = request.Request(url=url);
     response = request.urlopen(req, timeout=TIMEOUT//10)
     response.close()

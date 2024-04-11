@@ -1,5 +1,5 @@
 '''
-    www.icourses.cn/cuoc/ 下的视频公开课下载解析
+    www.icourses.cn/cuoc/ Download analysis of the video open class
 '''
 
 import os

@@ -1,5 +1,5 @@
 '''
-    Mooc 总项目的配置文件
+    Mooc Configuration file of the general project
 '''
 
 import sys
@@ -7,31 +7,31 @@ import os
 import re
 
 
-# 常量，固定参数
+# Constant, fixed parameter
 __QQgroup__ = "196020837"
 __email__  = "py.jun@qq.com"
 if hasattr(sys, 'frozen'):
     PATH = os.path.dirname(sys.executable)
 else:
-    PATH = os.path.dirname(os.path.abspath(__file__))  # 程序当前路径
-winre = re.compile(r'[?*|<>:"/\\\s]')  # windoes 文件非法字符匹配
+    PATH = os.path.dirname(os.path.abspath(__file__))  # Program current path
+winre = re.compile(r'[?*|<>:"/\\\s]')  # windoes File illegal character matching
 WIN_LENGTH = 64
-TIMEOUT = 60   # 请求超时时间
-PLAYLIST = '播放列表.dpl'
+TIMEOUT = 60   # Request timeout time
+PLAYLIST = 'playlist.dpl'
 PALYBACK = 'DPL_PYJUN'
-BATNAME = '修复播放列表.bat'
+BATNAME = 'Fix the playlist.bat'
 BATSTRING = '''\
 @echo off
 copy {0} {1}
-echo 成功修复“{1}”
-echo 请用Potplayer播放器打开“{1}”观看视频（未安装Potplayer自行百度下载安装）
+echo Successful repair“{1}”
+echo Please use the Potplayer player to open "{1}" to watch the video (not installed Potplayer to download and install it by yourself)
 pause
 '''.format(PALYBACK, PLAYLIST)
 LENGTH = 80
 
-# 变量，可修改的参数
+# Variables, modified parameters
 download_speed = "0"
-if getattr(sys, 'frozen', False): #是否打包
+if getattr(sys, 'frozen', False): #Whether to pack
     aria2_path = os.path.join(sys._MEIPASS, "aria2c.exe")
     alipay_path = os.path.join(sys._MEIPASS, "Alipay.jpg")
 else:
@@ -39,7 +39,7 @@ else:
     alipay_path = os.path.join(PATH, "Alipay.jpg")
 aira2_cmd = '%s --header "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36 -- fUcIvJ01pZVQhNq23lXm9gjazkeonsCx" --check-certificate=false -x 16 -s 64 -j 64 -k 2M --disk-cache 128M --max-overall-download-limit %s "{url:}" -d "{dirname:}" -o "{filename:}"'%(aria2_path, download_speed)
 
-# 课程链接的正则匹配
+# Demand matching of course links
 courses_re = {
     "icourse163_mooc": re.compile(r'\s*https?://www.icourse163.org/((learn)|(course))/(.*?)(#/.*)?$'),
     "icourse_cuoc": re.compile(r'\s*https?://www.icourses.cn/web/sword/portal/videoDetail\?courseId=([\w-]*)'), 

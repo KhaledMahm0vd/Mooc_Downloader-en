@@ -1,6 +1,5 @@
 '''
-    www.icourses.cn/mooc/ 下的资源共享课下载解析
-'''
+Resource sharing lessons under www.icourses.cn/mooc/ download analysis'''
 
 import os
 import re
@@ -45,7 +44,7 @@ class Icourse_Mooc(Icourse_Base):
         url = self.url_title.format(self.cid)
         text = request_get(url)
         match_name = re.search(r'<div +class="course-title clearfix">\s*<p +class="pull-left">(.*?)</p>', text)
-        match_school = re.search(r'<span +class="pull-left">学校:</span>\s*<p +class="course-information-hour pull-left">(.*?)</p>', text)
+        match_school = re.search(r'<span +class="pull-left">School:</span>\s*<p +class="course-information-hour pull-left">(.*?)</p>', text)
         if match_name and match_school:
             title_name = match_name.group(1) + '__' + match_school.group(1)
             self.title = winre.sub('', title_name)[:WIN_LENGTH]
@@ -137,7 +136,7 @@ class Icourse_Mooc(Icourse_Base):
             courseDir = os.path.join(rootDir, COURSENAME)
             if not os.path.exists(courseDir):
                 os.mkdir(courseDir)
-            print('-'*LEN_+'下载课程'+'-'*LEN_)
+            print('-'*LEN_+'Download course'+'-'*LEN_)
             Icourse_Base.potplayer.enable()
             for cnt1, info in enumerate(self.infos, 1):
                 chapter = '{'+str(cnt1)+'}--'+info['name']
@@ -167,14 +166,14 @@ class Icourse_Mooc(Icourse_Base):
             paperDir = os.path.join(rootDir, PAPERNAME)
             if not os.path.exists(paperDir):
                 os.mkdir(paperDir)
-            print("-"*LEN_+"下载试卷"+"-"*LEN_)
+            print("-"*LEN_+"Download test paper"+"-"*LEN_)
             paper_list = self._get_paper_links()
             self.download_pdf_list(paperDir, paper_list)
         if self.mode & IS_SOURCE:
             sourceDir = os.path.join(rootDir, SOURCENAME)
             if not os.path.exists(sourceDir):
                 os.mkdir(sourceDir)
-            print("-"*LEN_+"下载资源"+"-"*LEN_)
+            print("-"*LEN_+"Download resources"+"-"*LEN_)
             Icourse_Base.potplayer.disable()
             source_list = self._get_source_links()
             pdf_list = list(filter(lambda x:x[0].endswith('.pdf'), source_list))
@@ -186,8 +185,8 @@ class Icourse_Mooc(Icourse_Base):
         while True:
             try:
                 instr = input(
-                    "    视频:[1]    +    课件:[2]    +    试卷:[4]    +    资源:[8]\n"
-                    "请输入一个0-15的数选择性下载内容(如15表示全部下载,15=1+2+4+8) [0退出]: "
+                    "    Video: [1] Courseware: [2] + Test papers: [4] + Resources: [8]\n"
+                    "Please enter a 0-15 number selective download content (such as 15 represents all downloads, 15 = 1+2+4+8) [0 exit]: "
                     )
                 if not instr:
                     continue
@@ -199,10 +198,10 @@ class Icourse_Mooc(Icourse_Base):
                         self.mode = innum
                         return True
                     else:
-                        print("请输入一个0-15之间的整数!")
+                        print("Please enter an integer between 0-15!")
                         continue
                 except ValueError:
-                    print("请输入一个0-15之间的整数!")
+                    print("Please enter an integer between 0-15!")
             except KeyboardInterrupt:
                 print()
 

@@ -1,8 +1,8 @@
 '''
-    Mooc下载器主程序
+Mooc downloader main program
 
-    作者：PyJun
-    邮箱：py.jun@qq.com
+     Author: PyJun
+     Email: py.jun@qq.com
 '''
 
 if __package__ is None:

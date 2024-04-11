@@ -1,5 +1,5 @@
 '''
-    Mooc 生成 potplayer 播放列表 dpl 文件的类
+    Mooc class for generating potplayer playlist dpl files
 '''
 
 import os

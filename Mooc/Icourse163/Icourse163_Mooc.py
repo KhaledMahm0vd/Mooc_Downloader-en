@@ -1,5 +1,5 @@
 '''
-    www.icourse163.org 下所有免费课程的下载和解析
+    www.icourse163.org Download and analysis of all free courses below
 '''
 
 import os
@@ -71,7 +71,7 @@ class Icourse163_Mooc(Icourse163_Base):
         names = re.findall(r'name:"(.+)"', text)
         if names:
             title = '__'.join(names)
-            self.title = winre.sub('', title)[:WIN_LENGTH] # 用于除去win文件非法字符
+            self.title = winre.sub('', title)[:WIN_LENGTH] # Used to remove illegal characters of WIN files
 
     def _get_infos(self):
         if self.term_id is None:
@@ -125,7 +125,7 @@ class Icourse163_Mooc(Icourse163_Base):
                 if index >= self.mode: break
         return video_url, sub_url
 
-    def _download(self):  # 根据课程视频链接来下载高清MP4慕课视频, 成功下载完毕返回 True
+    def _download(self):  # Download the high -definition MP4 MP4 Mu lesson video according to the course video link, successfully download and return to TRUE
         print('\n{:^{}s}'.format(self.title, LEN_S))
         self.rootDir = rootDir = os.path.join(PATH, self.title)
         courseDir = os.path.join(rootDir, COURSENAME)
@@ -133,7 +133,7 @@ class Icourse163_Mooc(Icourse163_Base):
             os.makedirs(courseDir)
         Icourse163_Base.potplayer.init(rootDir)
         Icourse163_Base.potplayer.enable()
-        for i,chapter in enumerate(self.infos,1):  # 去除 win 文价夹中的非法字符
+        for i,chapter in enumerate(self.infos,1):  # Remove illegal characters in the win price clip
             print(chapter)
             chapterDir = os.path.join(courseDir, chapter)
             if not os.path.exists(chapterDir):

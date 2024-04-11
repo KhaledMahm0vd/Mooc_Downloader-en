@@ -1,5 +1,5 @@
 '''
-    Icourse163 抽象基类
+    Icourse163 Abstract base
 '''
 
 import os
@@ -20,8 +20,8 @@ class Icourse163_Base(Mooc_Base):
 
     def __init__(self):
         super().__init__()
-        self.infos = {}  # 课程视频和文件的链接请求信息，包含id等
-        self.__term_id = None # 下载课程的标题 ID
+        self.infos = {}  # Course video and file link request information, including ID, etc.
+        self.__term_id = None # Download the title of the course ID
     
     @property
     def term_id(self):
@@ -34,7 +34,7 @@ class Icourse163_Base(Mooc_Base):
     def set_mode(self):
         while True:
             try:
-                instr = input("请输入一个0-4的数选择性下载内容(1:超高清, 2:高清, 3:标清, 4:仅下载课件) [0退出]: ")
+                instr = input("Please enter a 0-4 number selective download content (1: ultra-high-definition, 2: HD, 3: bidding, only download courseware) [0 exit]:: ")
                 if not instr:
                     continue
                 try:
@@ -45,10 +45,10 @@ class Icourse163_Base(Mooc_Base):
                         self.mode = innum
                         return True
                     else:
-                        print("请输入一个0-4之间的整数!")
+                        print("Please enter an integer between 0-4!")
                         continue
                 except ValueError:
-                    print("请输入一个0-4之间的整数!")
+                    print("Please enter an integer between 0-4!")
             except KeyboardInterrupt:
                 pass
 
