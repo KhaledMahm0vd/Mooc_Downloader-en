@@ -1,22 +1,22 @@
-### 学无止网课下载器帮助文档
+### Xuewuzhi Online Course Downloader Help Document
 
 
 
-#### 一.  软件下载：
+#### 1. Software download:
 
 ------
 
 1. [Github Releases](https://github.com/PyJun/Mooc_Downloader/releases)
-2. [百度云链接](https://pan.baidu.com/s/1rP5Q66j1xF3D5l5iAL335g)
-3. [蓝奏云](https://pyjun.lanzoui.com/b00n4ln4b)
+2. [Baidu Cloud Link](https://pan.baidu.com/s/1rP5Q66j1xF3D5l5iAL335g)
+3. [Lan Zuoyun](https://pyjun.lanzoui.com/b00n4ln4b)
 
 
 
-#### 二. 使用说明
+#### 2. Instructions for use
 
 ------
 
-##### 1.从课程官网下选择任意一个课程复制其网址，如下图：
+##### 1. Select any course from the course official website and copy its URL, as shown below:
 
 ![](http://118.31.48.9/images/downloader/copy1.png)
 
@@ -24,7 +24,7 @@
 
 
 
-##### 2.然后粘贴到下载器中，并按要求输入指令，会自动下载相应课程的视频和课件，如下图：
+##### 2. Then paste it into the downloader and enter the instructions as required. The videos and courseware of the corresponding course will be automatically downloaded, as shown below:
 
 ![](http://118.31.48.9/images/downloader/demo1.png)
 
@@ -32,60 +32,59 @@
 
 
 
-#### 三.常见问题
+#### 3. Frequently Asked Questions
 
 ------
 
-##### 1.学无止下载器支持哪些网站的视频下载？
+##### 1. Which websites does Xuewuzhi Downloader support for video downloading?
 
-答：目前已支持以下慕课网站视频课程下载，官方网址如下：
+Answer: Currently, video course downloads from the following MOOC websites are supported. The official website is as follows:
 
-1. [中国大学慕课官网](https://www.icourse163.org/)
-2. [腾讯课堂](https://ke.qq.com/)
-3. [爱课程官网](http://www.icourses.cn/)
-4. [网易云课堂](https://study.163.com/)
-5. [有道精品课](https://ke.youdao.com/)
-6. [学堂在线](https://next.xuetangx.com/)
-7. [慕课网](http://www.imooc.com/)
-8. [超星学习通(学银在线)](http://www.xueyinonline.com/)
-9. [知到智慧树](https://www.zhihuishu.com/)
-10. [小鹅通](https://study.xiaoe-tech.com/)
-11. [千聊](https://www.qlchat.com/)
-12. [智慧职教](https://www.icve.com.cn/)
-13. [中公网校](https://www.eoffcn.com/)
-14. [学浪/抖音课堂](https://www.xuelangapp.com/)
+1. [China University MOOC official website](https://www.icourse163.org/)
+2. [Tencent Class](https://ke.qq.com/)
+3. [icourses official website](http://www.icourses.cn/)
+4. [NetEase Cloud Class](https://study.163.com/)
+5. [Youdao Premium Course](https://ke.youdao.com/)
+6. [Xuetang Online](https://next.xuetangx.com/)
+7. [MOOC.com](http://www.imooc.com/)
+8. [Chaoxing Xuetong (Xueyin Online)](http://www.xueyinonline.com/)
+9. [The Tree of Knowledge](https://www.zhihuishu.com/)
+10. [xiaoetong](https://study.xiaoe-tech.com/)
+11. [Qianchat](https://www.qlchat.com/)
+12. [Smart Vocational Education](https://www.icve.com.cn/)
+13. [Offcn Online School](https://www.eoffcn.com/)
+14. [Xuelang/Douyin Class](https://www.xuelangapp.com/)
 
 
-有关更多慕课网站的课程下载，敬请期待
+For more course downloads from MOOC websites, please stay tuned
 
-##### 2.关于课程还未开课无法下载， 或者正在开课无法下载全部课程问题？
+##### 2. Regarding the issue of being unable to download the course before it starts, or being unable to download all the courses while the course is being started?
 
-答：若课程有前几次开课，选择图片的版本一般选择最近一次的开课，然后复制链接进行下载。
-PS：关于每次开课内容一般大致相同，新课程可能会有少量更新等。一般不会影响学习。
+Answer: If the course has been started several times before, when choosing the version of the picture, generally select the most recent start, and then copy the link to download.
+PS: The content of each course is generally the same, and new courses may have a small amount of updates. Generally it will not affect learning.
 
-![图片](http://118.31.48.9/images/downloader/help1.png)
+![Picture](http://118.31.48.9/images/downloader/help1.png)
 
 ------
 
-##### 3.是否可以下载已经结束的课程？
+##### 3. Can I download courses that have ended?
 
-答：丝毫没影响，依然可以下载，直接复制链接到下载器中下载即可
+Answer: There is no impact at all. You can still download it. Just copy the link to the downloader and download it.
 
-##### 4.收费视频可以下载吗？
+##### 4. Can paid videos be downloaded?
 
-答：因为版权问题，未购买的收费视频该软件不提供下载
+Answer: Due to copyright issues, the software does not provide downloading of paid videos that have not been purchased.
 
-##### 5. “播放列表.dpl” 文件有什么用？
+##### 5. What is the use of the “playlist.dpl” file?
 
-答：电脑下载安装 **Potplayer** 播放器后，然后右键用potplayer打开“播放列表.dpl”文件，
+Answer: After downloading and installing the **Potplayer** player on your computer, then right-click to open the "playlist.dpl" file with potplayer.
 
-即可顺序播放器所有视频，可以更方便的观看
+All videos in the player can be played sequentially for easier viewing.
 
-##### 6.“修复播放列表.bat” 文件有什么用？
+##### 6. What is the use of the "Repair Playlist.bat" file?
 
-答：当你手动把整个课程目录拷贝到其它地方后，你会发现 “播放列表.dpl”文件会失效，这时可以通过双击“修复播放列表.bat”文件来修复它。
+Answer: After you manually copy the entire course directory to another location, you will find that the "Playlist.dpl" file will become invalid. In this case, you can repair it by double-clicking the "Repair Playlist.bat" file.
 
-##### 7.软件出现请求异常和下载异常的问题？
+##### 7. Does the software have abnormal request and download problems?
 
-答：一般情况是你的本地网络出现的问题，请检查网络是否正常连接。如果确认网络良好还是出现了这样的问题，那么欢迎反馈给我们
-
+Answer: Generally, there is a problem with your local network. Please check whether the network is connected normally. If you confirm that the network is good and still have such a problem, you are welcome to give us feedback.

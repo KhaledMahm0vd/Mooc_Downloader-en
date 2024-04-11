@@ -1,71 +1,70 @@
-### 				基于Python 爬虫的慕课视频下载【开源代码停止维护，软件仍在维护更新】
+### 				MOOC video download based on Python crawler [The open source code has stopped being maintained, and the software is still being maintained and updated]
 
-##### 1.  项目简介：
+##### 1. Project Description:
 
-- 项目环境为 Windows10,  Python3
-- 用 Python3.6 urllib3 模块爬虫，涉及模块包括标准库、三方库和其它开源组件，已打包成exe文件
-- 支持Mooc视频，字幕，课件下载，课程以目录树形式下载到硬盘，支持Potplayer播放
-- 支持中国大学，网易云课堂，有道精品课，有道领世，腾讯课堂，中公网校，新东方，小鹅通，学浪，抖音课堂，B站课堂，高途课堂，途途课堂，千聊，兴趣岛，爱课程，学堂在线，慕课网，超星学习通（学银在线），智慧树，智慧职教，二十大慕课网课的视频课程下载，核心下载调用 Aria2c
-- 用户可以直接下载 Release 下的 [学无止下载器](https://github.com/PyJun/Mooc_Downloader/releases)  安装即可使用
-- 有关下载器的使用以及相关问题，点击查看[Mooc下载器帮助文档](https://github.com/PyJun/Mooc_Downloader/wiki)
+- The project environment is Windows10, Python3
+- Use Python3.6 urllib3 module crawler, involving modules including standard libraries, third-party libraries and other open source components, which have been packaged into exe files
+- Supports Mooc videos, subtitles, courseware downloads, courses are downloaded to the hard drive in the form of a directory tree, and supports Potplayer playback
+- Supports China University, NetEase Cloud Classroom, Youdao Premium Class, Youdao Leading the World, Tencent Classroom, China Public Online School, New Oriental, Xiaoetong, Xuelang, Douyin Classroom, Bilibili Classroom, Gaotu Classroom, Tutu Classroom, Qianliao, Interest Island, Love Course, Xuetang Online, MOOC, Chaoxing Learning Network (Xueyin Online), Wisdom Tree, Smart Vocational Education, video course download of the top 20 MOOC online courses, the core download is called Aria2c
+- Users can directly download [Xuewuzhi Downloader](https://github.com/PyJun/Mooc_Downloader/releases) under Release and install it for use.
+- For information on the use of the downloader and related issues, click to view [Mooc Downloader Help Document](https://github.com/PyJun/Mooc_Downloader/wiki)
 
-##### 2. 功能演示：
+##### 2. Demo:
 
 ![demo1.png](http://xuewuzhi.cn/images/demo1.png)
 
 ![demo2.png](http://xuewuzhi.cn/images/demo2.png)
 
-##### 4.项目文件
+##### 4.project files
 
-- Mooc_Main.py	          整个项目的主程序,  其实是调用了 Mooc_Interface
-- Mooc_Interface.py       人机交互接口模块
-- Mooc_Config.py            Mooc 的配置文件
-- Mooc_Base.py               Mooc  抽象基类
-- Mooc_Potplayer.py       用于生成专用于 Potplayer 播放的 dpl 文件 
-- Mooc_Request.py          用 urllib 包装的一个Mooc请求库
-- Mooc_Download.py      调用 Aira2c 下载的命令接口
-- Icourses                          有关爱课程的模块包
-  - Icourse_Base.py              爱课程下载器的基类，继承自 Mooc_Base
-  - Icourse_Config.py            配置文件
-  - Icourse_Cuoc.py              爱课程视频公开课的下载的子类，http://www.icourses.cn/cuoc/
-  - Icourse_Mooc.py             爱课程资源共享课的下载的子类，http://www.icourses.cn/mooc/
+- Mooc_Main.py, 	the main program of the entire project, actually calls Mooc_Interface
+- Mooc_Interface.py 	human-computer interaction interface module
+- Mooc_Config.py 	Mooc configuration file
+- Mooc_Base.py 		Mooc abstract base class
+- Mooc_Potplayer.py 	is used to generate dpl files specifically for Potplayer playback
+- Mooc_Request.py 	is a Mooc request library wrapped in urllib
+- Mooc_Download.py 	calls the command interface for Aira2c download
+- Icourses module 	package with love courses
+   - Icourse_Base.py 	is the base class of icourse downloader, inherited from Mooc_Base
+   - Icourse_Config.py 	configuration file
+   - Icourse_Cuoc.py 	is a subcategory for downloading Icourse video open courses, http://www.icourses.cn/cuoc/
+   - Icourse_Mooc.py 	is a subcategory for downloading Icourse resource sharing courses, http://www.icourses.cn/mooc/
+- Icourse163 		module package about Chinese university MOOCs
+   - Icourse163_Base.py The base class of Chinese University MOOC downloader, inherited from Mooc_Base
+   - Icourse163_Config.py configuration file
+   - Icourse163_Mooc.py A subclass of Chinese University MOOC downloader, inherited from Icourse163_Base.py
 
-- Icourse163                      有关中国大学慕课的模块包
-  - Icourse163_Base.py         中国大学慕课下载器的基类，继承自 Mooc_Base
-  - Icourse163_Config.py       配置文件
-  - Icourse163_Mooc.py        中国大学慕课下载器得子类，继承自 Icourse163_Base.py
+##### 5.Run the project
 
-##### 5.运行项目
-
-请确保在项目工程的根目录下，然后在终端输入以下指令（python3 环境，无依赖的第三方模块）
+Please make sure you are in the root directory of the project, and then enter the following command in the terminal (python3 environment, no dependent third-party modules)
 
 ```powershell
 python -m Mooc
 ```
 
-##### 6.打包指令
+##### 6.packaging instructions
 
-1. 首先确保已经安装 **pyinstaller**，若未安装，则用 pip 安装，打开终端，输入：
+1. First make sure that **pyinstaller** has been installed. If it is not installed, use pip to install it, open the terminal and enter:
 
    ```powershell
    pip install pyinstaller
    ```
 
-2. 然后在项目工程的根目录下，终端输入：
+2. Then enter the terminal in the root directory of the project:
 
-   ```powershell
-   pyinstaller Mooc.spec
-   ```
+    ```powershell
+    pyinstallerMooc.spec
+    ```
 
-3. 最后会在项目工程根目录下出现一个**dist**文件夹，该文件夹会出现一个**Mooc-3.4.0.exe**程序
+3. Finally, a **dist** folder will appear in the project root directory, and a **Mooc-3.4.0.exe** program will appear in the folder.
 
 ![package.png](http://xuewuzhi.cn/images/package.png)
 
 
-##### 7.注意事项
-项目代码已好久未更新，Releases下有我打包好的exe文件，可直接下载使用~
-【该项目为早期开源的代码，最新版本代码未开源】
-1. 新版代码涉及网站爬虫、解析、解密，开源后容易和谐失效
-2. 新版本涉及太多的模块依赖（包括且不限于nodejs,electron,ariac2,annie,ffmpeg,wkhtmltopdf和一些自编译的python依赖库），难以分离出可独立可用的开源版
-3. 实在没有精力同时维护二个开源和闭源版本的代码
-4. 该项目并非完整的开源项目，提供的软件无病毒，可免费使用（也包含付费功能）
+##### 7. Precautions
+The project code has not been updated for a long time. There is an exe file I packaged under Releases, which can be downloaded and used directly~
+[This project is an early open source code, and the latest version of the code is not open source]
+1. The new version of the code involves website crawling, parsing, and decryption. It is easy to lose harmony after being open sourced.
+2. The new version involves too many module dependencies (including but not limited to nodejs, electron, ariac2, annie, ffmpeg, wkhtmltopdf and some self-compiled python dependent libraries), making it difficult to separate an independently usable open source version
+3. There is really no energy to maintain two open source and closed source versions of the code at the same time.
+4. This project is not a complete open source project. The software provided is virus-free and can be used for free (it also includes paid functions)
